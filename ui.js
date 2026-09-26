@@ -61,8 +61,12 @@ export function mount(spec, parts) {
   const readButton = document.createElement("button");
   readButton.textContent = "只看剥掉几处";
   readButton.addEventListener("click", function () {
-    const view = render(Object.assign({}, spec, { mark: mark }));
-    parts.out.textContent = "剥掉 " + view.removed + " 处，剩 " + view.count + " 行";
+    try {
+      const view = render(Object.assign({}, spec, { mark: mark }));
+      parts.out.textContent = "剥掉 " + view.removed + " 处，剩 " + view.count + " 行";
+    } catch (error) {
+      parts.out.textContent = String(error && error.code ? error.code : error);
+    }
   });
   parts.controls.appendChild(readButton);
 

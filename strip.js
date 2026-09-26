@@ -1,6 +1,6 @@
 // strip.js：剥离（基线：原样返回）
-import { scanLine } from "./scan.js";
+import { cutLine } from "./scan.js";
 
 export function stripComments(lines, mark) {
-  return lines.slice();
+  return lines.map((line) => cutLine(line, mark));
 }
