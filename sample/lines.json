@@ -1,0 +1,11 @@
+{
+  "quote_error_code": "E_UNCLOSED_QUOTE",
+  "mark": "#",
+  "lines": [
+    "value = 1  # 说明",
+    "text = \"a # b\"",
+    "name = 'x'  # tail",
+    "   # 整行注释",
+    "plain = 2"
+  ]
+}
